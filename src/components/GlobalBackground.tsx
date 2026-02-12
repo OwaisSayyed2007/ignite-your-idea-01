@@ -1,9 +1,16 @@
+import React, { Suspense, lazy } from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
+
+const Spline = lazy(() => import('@splinetool/react-spline'));
+
 export default function GlobalBackground() {
+    const isMobile = useIsMobile();
+
     return (
         <div className="fixed inset-0 z-[-1] w-full h-full pointer-events-none overflow-hidden bg-black">
-            {/* Main glow */}
+            {/* Fallback & Layered Background */}
             <div
-                className="absolute inset-0 opacity-40"
+                className="absolute inset-0 opacity-40 transition-opacity duration-1000"
                 style={{
                     backgroundImage: `
                         radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.4) 0%, transparent 50%),
@@ -12,6 +19,16 @@ export default function GlobalBackground() {
                     `
                 }}
             />
+
+            {/* Spline 3D Scene */}
+            <Suspense fallback={null}>
+                <div className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${isMobile ? 'opacity-30' : 'opacity-60'}`}>
+                    <Spline
+                        scene="https://prod.spline.design/kc-ue-UW4L6njbbS/scene.splinecode"
+                    />
+                </div>
+            </Suspense>
+
             {/* Subtle grain effect */}
             <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
         </div>
