@@ -29,7 +29,7 @@ export default function GlobalBackground() {
                     className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
                     style={{
                         backgroundImage: `url(${mobileBg})`,
-                        opacity: 0.6
+                        opacity: 1
                     }}
                 />
             )}
