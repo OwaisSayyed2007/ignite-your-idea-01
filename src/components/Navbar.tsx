@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 
+import logo from "../assets/logo.png";
+
 const navLinks = [
   { label: "Problem", href: "/#comparison" },
   { label: "Solution", href: "/#solution" },
@@ -40,9 +42,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-full gap-4 md:gap-8 lg:gap-12">
           {/* Logo Section */}
           <Link to="/" className="flex items-center gap-3 shrink-0 pointer-events-auto">
-            <div className="w-10 h-10 rounded-xl bg-primary/20 border border-primary/40 flex items-center justify-center shrink-0">
-              <span className="text-primary font-display font-bold text-base">F</span>
-            </div>
+            <img
+              src={logo}
+              alt="FIWB AI Logo"
+              className={`transition-all duration-300 ${scrolled ? "h-8" : "h-12"}`}
+            />
             <motion.span
               layout
               className={`font-display font-bold text-foreground whitespace-nowrap ${scrolled ? "text-base" : "text-xl"
