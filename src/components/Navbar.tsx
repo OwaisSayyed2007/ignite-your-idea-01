@@ -70,13 +70,27 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Waitlist Button - Always Visible */}
-          <Link
-            to="/waitlist"
-            className="px-5 py-2.5 md:px-8 md:py-3 rounded-full bg-blue-600 text-white font-bold text-sm md:text-base shadow-xl shadow-blue-600/30 hover:bg-blue-700 hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap shrink-0"
-          >
-            Join Waitlist
-          </Link>
+          {/* Action Buttons */}
+          <div className="flex items-center gap-2 md:gap-4">
+            <a
+              href="https://app.fiwbai.xyz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`flex items-center gap-1.5 px-4 py-2 md:px-6 md:py-2.5 rounded-full border transition-all duration-300 group shrink-0 ${scrolled
+                ? "bg-black text-white hover:bg-black/90"
+                : "bg-white/10 border-white/20 text-white hover:bg-white/20"
+                }`}
+            >
+              <span className="font-bold text-xs md:text-sm">BETA</span>
+            </a>
+
+            <Link
+              to="/waitlist"
+              className="px-4 py-2 md:px-8 md:py-3 rounded-full bg-blue-600 text-white font-bold text-xs md:text-base shadow-xl shadow-blue-600/30 hover:bg-blue-700 hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap shrink-0"
+            >
+              Join Waitlist
+            </Link>
+          </div>
         </div>
       </motion.nav>
     </div>
