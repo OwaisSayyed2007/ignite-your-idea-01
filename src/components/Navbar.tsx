@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
+import { Sparkles } from "lucide-react";
 
 import logo from "../assets/logo.png";
 
@@ -72,17 +73,27 @@ const Navbar = () => {
 
           {/* Action Buttons */}
           <div className="flex items-center gap-2 md:gap-4">
-            <a
+            <motion.a
               href="https://app.fiwbai.xyz"
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center gap-1.5 px-4 py-2 md:px-6 md:py-2.5 rounded-full border transition-all duration-300 group shrink-0 ${scrolled
-                ? "bg-black text-white hover:bg-black/90"
-                : "bg-white/10 border-white/20 text-white hover:bg-white/20"
-                }`}
+              animate={{
+                boxShadow: [
+                  "0 0 0px rgba(139, 92, 246, 0)",
+                  "0 0 20px rgba(139, 92, 246, 0.4)",
+                  "0 0 0px rgba(139, 92, 246, 0)"
+                ]
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="flex items-center gap-1.5 px-4 py-2 md:px-6 md:py-2.5 rounded-full transition-all duration-300 group shrink-0 font-bold text-xs md:text-sm text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:scale-105 hover:brightness-110 active:scale-95 shadow-lg shadow-indigo-500/20 border border-white/20"
             >
-              <span className="font-bold text-xs md:text-sm">BETA</span>
-            </a>
+              <Sparkles className="w-3.5 h-3.5 md:w-4 md:h-4 group-hover:animate-spin" />
+              <span>BETA</span>
+            </motion.a>
 
             <Link
               to="/waitlist"
