@@ -89,7 +89,7 @@ const Navbar = () => {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="flex items-center gap-1.5 px-4 py-2 md:px-6 md:py-2.5 rounded-full transition-all duration-300 group shrink-0 font-bold text-xs md:text-sm text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:scale-105 hover:brightness-110 active:scale-95 shadow-lg shadow-indigo-500/20 border border-white/20"
+              className="flex items-center gap-1.5 px-4 py-2 md:px-8 md:py-3 rounded-full transition-all duration-300 group shrink-0 font-bold text-xs md:text-base text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:scale-105 hover:brightness-110 active:scale-95 shadow-lg shadow-indigo-500/20 border border-white/20"
             >
               <Sparkles className="w-3.5 h-3.5 md:w-4 md:h-4 group-hover:animate-spin" />
               <span>BETA</span>
