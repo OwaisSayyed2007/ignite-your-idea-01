@@ -8,6 +8,7 @@ import Waitlist from "./pages/Waitlist";
 import NotFound from "./pages/NotFound";
 import GlobalBackground from "./components/GlobalBackground";
 import ScrollToTop from "./components/ScrollToTop";
+import { Analytics } from "@vercel/analytics/react";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
+    <Analytics />
   </QueryClientProvider>
 );
 
