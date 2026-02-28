@@ -6,6 +6,7 @@ import { z } from "zod";
 const waitlistSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
   email: z.string().trim().email("Please enter a valid email").max(255),
+  phone: z.string().trim().min(10, "Valid phone number required").max(15),
   college: z.string().trim().min(1, "College name is required").max(200),
   year: z.string().min(1, "Please select your year"),
 });
@@ -21,6 +22,7 @@ const WaitlistSection = () => {
   const [form, setForm] = useState<WaitlistData>({
     name: "",
     email: "",
+    phone: "",
     college: "",
     year: "",
   });
@@ -141,6 +143,19 @@ const WaitlistSection = () => {
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-2">Phone Number</label>
+                  <input
+                    name="phone"
+                    type="tel"
+                    value={form.phone}
+                    onChange={handleChange}
+                    placeholder="+91 98765 43210"
+                    className="w-full px-4 py-3 rounded-xl bg-secondary text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all text-sm"
+                    maxLength={15}
+                  />
+                  {errors.phone && <p className="text-destructive text-xs mt-1">{errors.phone}</p>}
+                </div>
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">College / University</label>
                   <input
