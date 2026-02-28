@@ -31,26 +31,26 @@ const Navbar = () => {
   }, [location]);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none p-4">
+    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none p-2 sm:p-4 w-full">
       <motion.nav
         layout
         transition={{ type: "spring", stiffness: 200, damping: 30 }}
         className={`pointer-events-auto backdrop-blur-xl border overflow-hidden shadow-2xl ${scrolled
-          ? "w-fit min-w-[280px] max-w-[95vw] md:min-w-[600px] rounded-full bg-white/60 border-black/10 px-6 py-3"
-          : "w-full max-w-7xl rounded-full bg-white/20 border-white/10 px-6 md:px-12 h-20"
+          ? "w-fit min-w-[min(280px,100vw-1rem)] max-w-[95vw] md:min-w-[600px] rounded-full bg-white/60 border-black/10 px-3 sm:px-6 py-2 sm:py-3"
+          : "w-full max-w-7xl rounded-full bg-white/20 border-white/10 px-4 sm:px-6 md:px-12 h-16 sm:h-20"
           }`}
       >
-        <div className="flex items-center justify-between h-full gap-4 md:gap-8 lg:gap-12">
+        <div className="flex items-center justify-between h-full gap-2 sm:gap-4 md:gap-8 lg:gap-12 w-full">
           {/* Logo Section */}
-          <Link to="/" className="flex items-center gap-3 shrink-0 pointer-events-auto">
+          <Link to="/" className="flex items-center gap-1.5 sm:gap-3 shrink-0 pointer-events-auto">
             <img
               src={logo}
               alt="FIWB AI Logo"
-              className={`transition-all duration-300 ${scrolled ? "h-8" : "h-12"}`}
+              className={`transition-all duration-300 ${scrolled ? "h-6 sm:h-8" : "h-8 sm:h-12"}`}
             />
             <motion.span
               layout
-              className={`font-display font-bold text-foreground whitespace-nowrap ${scrolled ? "text-base" : "text-xl"
+              className={`font-display font-bold text-foreground whitespace-nowrap ${scrolled ? "text-sm sm:text-base" : "text-base sm:text-xl"
                 }`}
             >
               FIWB <span className="text-primary">AI</span>
@@ -72,7 +72,7 @@ const Navbar = () => {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex items-center gap-2 md:gap-4">
+          <div className="flex items-center gap-1.5 sm:gap-2 md:gap-4 shrink-0">
             <motion.a
               href="https://app.fiwbai.xyz"
               target="_blank"
@@ -89,15 +89,15 @@ const Navbar = () => {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="flex items-center gap-1.5 px-4 py-2 md:px-8 md:py-3 rounded-full transition-all duration-300 group shrink-0 font-bold text-xs md:text-base text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:scale-105 hover:brightness-110 active:scale-95 shadow-lg shadow-indigo-500/20 border border-white/20"
+              className="flex items-center gap-1 px-3 py-1.5 sm:px-4 sm:py-2 md:px-8 md:py-3 rounded-full transition-all duration-300 group shrink-0 font-bold text-[10px] sm:text-xs md:text-base text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:scale-105 hover:brightness-110 active:scale-95 shadow-lg shadow-indigo-500/20 border border-white/20"
             >
-              <Sparkles className="w-3.5 h-3.5 md:w-4 md:h-4 group-hover:animate-spin" />
+              <Sparkles className="w-3 h-3 md:w-4 md:h-4 group-hover:animate-spin" />
               <span>BETA</span>
             </motion.a>
 
             <Link
               to="/waitlist"
-              className="px-4 py-2 md:px-8 md:py-3 rounded-full bg-blue-600 text-white font-bold text-xs md:text-base shadow-xl shadow-blue-600/30 hover:bg-blue-700 hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap shrink-0"
+              className="px-3 py-1.5 sm:px-4 sm:py-2 md:px-8 md:py-3 rounded-full bg-blue-600 text-white font-bold text-[10px] sm:text-xs md:text-base shadow-xl shadow-blue-600/30 hover:bg-blue-700 hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap shrink-0"
             >
               Join Waitlist
             </Link>
