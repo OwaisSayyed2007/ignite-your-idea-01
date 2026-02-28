@@ -99,7 +99,8 @@ const Navbar = () => {
               to="/waitlist"
               className="px-3 py-1.5 sm:px-4 sm:py-2 md:px-8 md:py-3 rounded-full bg-blue-600 text-white font-bold text-[10px] sm:text-xs md:text-base shadow-xl shadow-blue-600/30 hover:bg-blue-700 hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap shrink-0"
             >
-              Join Waitlist
+              <span className="sm:hidden">Waitlist</span>
+              <span className="hidden sm:inline">Join Waitlist</span>
             </Link>
           </div>
         </div>
