@@ -58,38 +58,6 @@ const WaitlistSection = () => {
         body: JSON.stringify(form),
       });
 
-      // After submission, instantly check if by any chance they are already verified
-      const CSV_URL = "https://docs.google.com/spreadsheets/d/1ctqt1xBSB3a6O0iGHc7NE2iEZAFvfdYLYyZNajUpYAs/export?format=csv";
-      try {
-        const response = await fetch(CSV_URL);
-        const csvText = await response.text();
-        const rows = csvText.split('\n');
-        const targetEmail = form.email.trim().toLowerCase();
-
-        let isVerified = false;
-
-        for (let i = 1; i < rows.length; i++) {
-          const columns = rows[i].split(',');
-          if (columns.length >= 6) {
-            const rowEmail = columns[2]?.trim().toLowerCase() || "";
-            const rowVerifiedStatus = columns[5]?.trim().toLowerCase() || "";
-
-            if (rowEmail === targetEmail && rowVerifiedStatus === "yes") {
-              isVerified = true;
-              break;
-            }
-          }
-        }
-
-        if (isVerified) {
-          localStorage.setItem("betaUnlocked", "true");
-          // Dispatch event so Navbar updates instantly
-          window.dispatchEvent(new Event("betaUnlocked"));
-        }
-      } catch (err) {
-        console.error("Auto verification check failed", err);
-      }
-
       setLoading(false);
       setSubmitted(true);
     } catch (error) {
