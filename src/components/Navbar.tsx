@@ -89,15 +89,15 @@ const Navbar = () => {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="flex items-center gap-1 px-3 py-1.5 sm:px-4 sm:py-2 md:px-8 md:py-3 rounded-full transition-all duration-300 group shrink-0 font-bold text-[10px] sm:text-xs md:text-base text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:scale-105 hover:brightness-110 active:scale-95 shadow-lg shadow-indigo-500/20 border border-white/20"
+              className="flex items-center justify-center gap-1.5 px-3 sm:px-4 md:px-8 h-8 sm:h-10 md:h-12 rounded-full transition-all duration-300 group shrink-0 font-bold text-xs sm:text-sm md:text-base text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:scale-105 hover:brightness-110 active:scale-95 shadow-lg shadow-indigo-500/20 border border-white/20"
             >
-              <Sparkles className="w-3 h-3 md:w-4 md:h-4 group-hover:animate-spin" />
+              <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:animate-spin" />
               <span>BETA</span>
             </motion.a>
 
             <Link
               to="/waitlist"
-              className="px-3 py-1.5 sm:px-4 sm:py-2 md:px-8 md:py-3 rounded-full bg-blue-600 text-white font-bold text-[10px] sm:text-xs md:text-base shadow-xl shadow-blue-600/30 hover:bg-blue-700 hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap shrink-0"
+              className="flex items-center justify-center px-4 sm:px-5 md:px-8 h-8 sm:h-10 md:h-12 rounded-full bg-blue-600 text-white font-bold text-xs sm:text-sm md:text-base shadow-xl shadow-blue-600/30 hover:bg-blue-700 hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap shrink-0"
             >
               <span className="sm:hidden">Waitlist</span>
               <span className="hidden sm:inline">Join Waitlist</span>
