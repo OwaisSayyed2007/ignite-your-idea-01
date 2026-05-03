@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-import { Sparkles } from "lucide-react";
 
 import logo from "../assets/logo.png";
 
@@ -73,28 +72,6 @@ const Navbar = () => {
 
           {/* Action Buttons */}
           <div className="flex items-center gap-1.5 sm:gap-2 md:gap-4 shrink-0">
-            <motion.a
-              href="https://app.fiwbai.xyz"
-              target="_blank"
-              rel="noopener noreferrer"
-              animate={{
-                boxShadow: [
-                  "0 0 0px rgba(139, 92, 246, 0)",
-                  "0 0 20px rgba(139, 92, 246, 0.4)",
-                  "0 0 0px rgba(139, 92, 246, 0)"
-                ]
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="flex items-center justify-center gap-1.5 px-3 sm:px-4 md:px-8 h-8 sm:h-10 md:h-12 rounded-full transition-all duration-300 group shrink-0 font-bold text-xs sm:text-sm md:text-base text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:scale-105 hover:brightness-110 active:scale-95 shadow-lg shadow-indigo-500/20 border border-white/20"
-            >
-              <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:animate-spin" />
-              <span>BETA</span>
-            </motion.a>
-
             <Link
               to="/waitlist"
               className="flex items-center justify-center px-4 sm:px-5 md:px-8 h-8 sm:h-10 md:h-12 rounded-full bg-blue-600 text-white font-bold text-xs sm:text-sm md:text-base shadow-xl shadow-blue-600/30 hover:bg-blue-700 hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap shrink-0"
